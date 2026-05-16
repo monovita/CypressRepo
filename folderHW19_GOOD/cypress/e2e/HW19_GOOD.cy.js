@@ -1,14 +1,14 @@
 import { MainPage } from "../helpers/Page Objects/mainPage";
 import { SocialLinks } from "../helpers/Page Objects/socialLinks";
 import { ContactLinks } from "../helpers/Page Objects/contactLinks";
+import { HeaderLinks } from "../helpers/Page Objects/headerLinks";
 import { Credentials } from "../helpers/Page Objects/credentials";
-
-
 
 describe ("Links of qauto.forstudy.space", () => {
   const mainPage = new MainPage();
   const socialLinks = new SocialLinks();
   const contactLinks = new ContactLinks();
+  const headerLinks = new HeaderLinks();
   const credentials = new Credentials();
 
   beforeEach(() => {
@@ -26,7 +26,48 @@ describe ("Links of qauto.forstudy.space", () => {
       mainPage.closeSignUp.click();
     });
 
-    it ("Facebook link", () => {
+    it("hillelauto link", () => {
+      headerLinks.hillelauto
+      .should("be.visible")
+      .and("not.be.disabled")
+      .click();
+    });
+
+    it("Home link", () => {
+      headerLinks.home
+      .should("be.visible")
+      .and("not.be.disabled")
+      .click();
+    })
+
+    it("About link", () => {
+      headerLinks.about
+      .should("be.visible")
+      .and("not.be.disabled")
+      .click();
+    })
+
+    it("Contacts link", () => {
+      headerLinks.contacts
+      .should("be.visible")
+      .and("not.be.disabled")
+      .click();
+    })
+
+    it("Guest Log In", () => {
+      headerLinks.guestLogIn
+      .should("be.visible")
+      .and("not.be.disabled")
+      .click();
+    })
+
+    it("Log In", () => {
+      headerLinks.logIn.click();
+      headerLinks.logInModal.should("be.visible");
+      headerLinks.closeLogIn.click();
+    })
+
+    it("Facebook link", () => {
       socialLinks.facebook
       .should("be.visible")
       .and("not.be.disabled")
