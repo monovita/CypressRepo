@@ -37,7 +37,6 @@ export class HillelAutoPageLinks{
 
     get logInModal() {
         return cy.get(`[class="modal-title"]`);
-        //return cy.get(`[class="modal-content"]`);
     }
 
     get closeLogIn() {
