@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-28T14:13:40.547Z",
+    "end": "2026-05-28T14:13:48.355Z",
+    "duration": 7808,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "25ce8574-8df4-4764-832d-3563b4e1a9c0",
+      "title": "",
+      "fullFile": "cypress/e2e/garageFuelPositiveTests.cy.js",
+      "file": "cypress/e2e/garageFuelPositiveTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "327a5dab-8c9b-4855-a6bc-3cfc91e65f35",
+          "title": "LogIn positive tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Car is added",
+              "fullTitle": "LogIn positive tests Car is added",
+              "timedOut": null,
+              "duration": 3779,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "garagePage.addCarButton.click();\ngaragePage.addCarModal.should(\"be.visible\");\ngaragePage.carBrandDropdown.select(`Porsche`);\ngaragePage.carModelDropdown.select(`Cayenne`);\ngaragePage.mileageField.type(\"10\");\ngaragePage.addButton.click();\ncy.get(`[class=\"car_name h2\"]`).contains(`Porsche Cayenne`);",
+              "err": {},
+              "uuid": "9c0bf98d-c4b8-4515-bbb1-aa036cf15466",
+              "parentUUID": "327a5dab-8c9b-4855-a6bc-3cfc91e65f35",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fuel expense is added",
+              "fullTitle": "LogIn positive tests Fuel expense is added",
+              "timedOut": null,
+              "duration": 3976,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// here is a part about adding a car to keep the tests independent\ngaragePage.addCarButton.click();\ngaragePage.addCarModal.should(\"be.visible\");\ngaragePage.carBrandDropdown.select(`Porsche`);\ngaragePage.carModelDropdown.select(`Cayenne`);\ngaragePage.mileageField.type(\"10\");\ngaragePage.addButton.click();\ncy.get(`[class=\"car_name h2\"]`).contains(`Porsche Cayenne`);\n// and here goes fuel check\nfuelExpenses.fuelPageNav.click();\nfuelExpenses.fuelPageNav.click();\ncy.url().should('contain', '/panel/expenses');\nfuelExpenses.carSelectDropdown.click(); //;\nfuelExpenses.carItem.should('contain', `Porsche Cayenne`).last().click();\nfuelExpenses.addExpenseButton.click();\ncy.get(`[id=\"addExpenseMileage\"]`).clear().type(`150`);\nfuelExpenses.numberOfLitersField.type(`100`);\nfuelExpenses.totalCostField.type(`150000`);\nfuelExpenses.addButton.click();\nfuelExpenses.expensesTable.should('contain',  true && '150000');",
+              "err": {},
+              "uuid": "ef087eb8-9757-4996-885d-9e8c65c72810",
+              "parentUUID": "327a5dab-8c9b-4855-a6bc-3cfc91e65f35",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9c0bf98d-c4b8-4515-bbb1-aa036cf15466",
+            "ef087eb8-9757-4996-885d-9e8c65c72810"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7755,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
