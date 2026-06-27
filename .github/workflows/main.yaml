@@ -6,7 +6,7 @@ jobs:
     # Cypress Docker image from https://hub.docker.com/r/cypress
     # with browsers pre-installed
     container:
-      image: cypress/browsers
+      image: cypress/browsers:latest
       options: --user 1001
     steps:
       - uses: actions/checkout@v4

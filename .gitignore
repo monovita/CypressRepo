@@ -1,7 +1,5 @@
 node_modules/
 
-package-lock.json
-
 package.json
 
 # BELOW ARE THINGS GENERATED FOR MACOS BY gitignore.io
