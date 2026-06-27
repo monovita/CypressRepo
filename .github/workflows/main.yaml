@@ -16,4 +16,5 @@ jobs:
         with:
           browser: chrome
           install: false
+          config-file: cypress.prod.config.js
       
