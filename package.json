@@ -1,0 +1,31 @@
+{
+  "name": "cypressrepo",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/monovita/CypressRepo#readme",
+  "bugs": {
+    "url": "https://github.com/monovita/CypressRepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monovita/CypressRepo.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "cy:run:prod": "npx cypress run --config-file cypress.prod.config.js --reporter mochawesome",
+    "cy:run:staging": "npx cypress run --config-file cypress.staging.config.js --reporter mochawesome",
+    "cy:open:prod": "npx cypress open --config-file cypress.prod.config.js",
+    "cy:open:staging": "npx cypress open --config-file cypress.staging.config.js"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "cypress": "^15.18.0",
+    "mochawesome": "^7.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
